@@ -1,0 +1,52 @@
+==================================================================
+|                       SOLUTION                                  |
+==================================================================
+
+CALCULE DES ADDRESSE IP
+------------------------
+Ip besoin =14000 / 8 sous reseaux
+n= log de Ip /2
+qui vaut : 2**14 est cela vaut == " 16384 "
+2**14//8 sous reseaux == 2048 Ip dans chaque sous reseaux
+
+32bit - 14 bit == 18 bits qui vaut 18bit reseau
+donc on a:
+---------------------------------------------------
+00001010.00001010.00000000.00000000/18
+adreese reseau == 00001010.00001010.00|000000.00000000/18
+                  ____________________|____________________
+                  bit reseau             bit hote
+
+cela nous donne : 10.10.0.0/18 comme adresse IP du grand reseau 
+________________________________________________________________
+
+calcule des adresse de sous reseau:
+ 2**?==8
+    2**3 ; donc on auras 3 bit de plus a ajouter pour les bit reseau
+    00001010.00001010.0000|000|0.00000000/21 ------ 1 premier sous reseau[10.10.0.0/21]
+    00001010.00001010.0000|001|0.00000000/21 -------2 -------------------[ 10.10.8.0/21]
+    00001010.00001010.0000|011|0.00000000/21 -------3 -------------------[ 10.10.16.0/21]
+
+
+
+1. connection dans la console AWS , connexion au compte 
+2. crochet cathegorie service et cliquer sur " NETWORK "
+    puis cliquer sur VPC;
+    after that , cliquer sur creer un VPC ;
+    puis configurer le nom de votre VPC ainsi que l"addresse IP du grand reserau 
+    puis lancer votre VPC
+
+-------------------------------------------------------------------------
+3. creation de sous reseaux , allant dans le menu VPC en gauche de la console 
+4. cliquer sur le sous reseau , puis creer un sous reseau ;
+    donner un nom a ton sous reseau;
+    selectioner le VPC sur le quel tu veuc creer ton sous reseau
+    configurer l'adreese du sous reseau
+    choisir le AZ dont tu doit placer ton sous reseau 
+    puis lancer cela 
+---------------------------------------------------------------------------------
+
+
+
+
+
