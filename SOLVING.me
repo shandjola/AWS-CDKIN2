@@ -1,0 +1,36 @@
+SOLVING
+______________
+
+step 1: installing crontab with common
+    # installing crontab in amazon linux
+    sudo yum install cronie
+    # start crontab
+    sudo systemctl start crond
+-----------------------------------------------------
+step 2: creat file with the optional name but fo me i choose jouranl.log name
+        # common
+        touch journal.log 
+        # creating of second file for our script
+        touch script.sh
+-------------------------------------------------------------------------------------
+step 3: open script.sh 
+    # edit script.sh with nano and write our script inside
+    nano script.sh
+    # write:
+        #!bin/bash
+        echo "Hello word"
+    #save and quit
+        press Ctl+X and clic Y for yes and press Enter buttom
+--------------------------------------------------------------------------------------
+step 4: open crontab
+    # enter common of crontab for edit for write
+    by default crontab is opened with "vi"
+    crontab -e
+    # write our common for crontab
+    * * * * * /home/ec2-user/scri.sh >> /home/ec2-user/journal.log
+---------------------------------------------------------------------------------------------
+step 4: launch script in journal.log
+    tail -f journal.log
+
+    
+
